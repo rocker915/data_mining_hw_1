@@ -15,9 +15,9 @@ l - letter
 def format_rows(docs):
     """ format the text field and strip special characters """
     D = []
-    for d in docs.data:
-        temp_d = " ".join(d.split("\n")).strip('\n\t')
-        D.append([temp_d])
+    for d in docs:
+        temp_d = d.replace(".  ",".").replace("\n","").split("\t")
+        D.append(temp_d)
     return D
 
 def format_labels(target, docs):
